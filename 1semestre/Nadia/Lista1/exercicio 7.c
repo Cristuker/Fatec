@@ -6,11 +6,11 @@ int main()
     float lucro, imposto, pfabrica, lucroDist, totImposto, total;
 
    printf("Digite o percentual de lucro do vendedor: ");
-   scanf("%f", lucro);
+   scanf("%f", &lucro);
    printf("Digite o valor do imposto: ");
-   printf("%f", imposto);
-   printf("Digite o preÁo de f·brica: ");
-   scanf("%f", pfabrica);
+   scanf("%f", &imposto);
+   printf("Digite o pre√ßo de f√°brica: ");
+   scanf("%f", &pfabrica);
 
     lucroDist = pfabrica * (1.0 - ((100 - lucro) / 100));
     totImposto = pfabrica * (1.0 - ((100 - imposto) / 100));
@@ -18,7 +18,7 @@ int main()
 
     printf("Lucro do vendedor : %.2f\n", lucroDist);
     printf("imposto : %.2f\n", totImposto);
-    printf("PreÁo final: %.2f", total);
+    printf("Pre√ßo final: %.2f", total);
 
 }
 
