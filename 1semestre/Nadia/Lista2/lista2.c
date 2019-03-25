@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define ex3
+#define ex2
 
 
 
