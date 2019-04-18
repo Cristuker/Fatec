@@ -65,7 +65,6 @@ float tot = 0;
         printf("Digite um numero negativo: ");
         scanf("%f", &numeros[i]);
         quadrado[i] = numeros[i] * numeros[i];
-        printf("%f",quadrado[i]);
         tot = quadrado[i]+tot;
         }
         if(tot < 1000){
