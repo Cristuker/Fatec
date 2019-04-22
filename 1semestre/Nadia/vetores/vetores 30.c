@@ -1,4 +1,4 @@
-#define ex2
+#define ex3
 
 
 #ifdef ex1
@@ -83,3 +83,29 @@ int digitado=0;
 
 }
 #endif // ex2
+
+#ifdef ex3
+int main(){
+
+int n =10;
+int a[n];
+int b[n];
+
+    for(int i =0; i<=n; i++){
+        printf("Digite um valor positivo: ");
+        scanf("%d", &a[i]);
+    }
+
+    for(int i =0; i<=n; i++){
+        b[i] = -a[i];
+    }
+    printf("\n");
+    printf("--------------------------");
+    printf("\n");
+    for(int i =0; i<=n; i++){
+        printf("vetor a: %d --- vetor b: %d", a[i],b[i]);
+        printf("\n");
+    }
+
+}
+#endif // ex3
