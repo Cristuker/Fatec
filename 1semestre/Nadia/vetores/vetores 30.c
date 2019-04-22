@@ -31,33 +31,54 @@ int numeros[n];
 int posicao[n];
 int digitado=0;
 
-    for(int i = 0; i <n ; i++){
+//Pegando os numeros
+    for(int i = 1; i <=n ; i++){
         printf("Digite um numero: ");
         scanf("%d", &numeros[i]);
-
+//verificacao e substituicao do numero maior
         if(numeros[i] > maior){
+            digitado =0;
             maior = numeros[i];
-            posicao[i] = i;
+        }
+    }
+
+//contando quantas vezes o numero maior foi digitado
+    for(int i = 1; i <=n; i++){
             if(maior == numeros[i]){
                 digitado++;
             }
         }
-
+    for(int i =1; i <=n ; i++){
+        if(numeros[i] == maior){
+            posicao[i] = i;
+        }else{
+         posicao[i] =0;
+        }
     }
 
-    for(int i = 0; i <n; i++){
+
+//exibindo numeros na tela
+    for(int i = 1; i <=n; i++){
         printf("%d", numeros[i]);
         printf("\n");
     }
+
+
+
     printf("O maior numero: %d",maior);
     printf("\n");
     printf("Foi digitado %d vezes",digitado);
     printf("\n");
-    printf("E apareceu na(s) posicao(oes) ");
+    printf("E apareceu na(s) posicao(oes)");
     printf("\n");
-    for(int i = 0; i < n ;i++){
-        printf("%d", posicao[i]);
-        printf("\n");
+
+ //mostrando as posições
+    for(int i = 1; i <=n ;i++){
+        if(posicao[i] != 0){
+            printf("%d", posicao[i]);
+            printf("\n");
+        }
+
     }
 
 }
