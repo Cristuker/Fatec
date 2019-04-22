@@ -1,6 +1,6 @@
 #define ex3
 
-
+//exercicio 1
 #ifdef ex1
 int main(){
 
@@ -21,7 +21,7 @@ float numero[n];
 
 }
 #endif // ex1
-
+//exercicio 5
 #ifdef ex2
 int main(){
 
@@ -83,7 +83,7 @@ int digitado=0;
 
 }
 #endif // ex2
-
+//exercicio 6
 #ifdef ex3
 int main(){
 
@@ -103,7 +103,7 @@ int b[n];
     printf("--------------------------");
     printf("\n");
     for(int i =0; i<=n; i++){
-        printf("vetor a: %d --- vetor b: %d", a[i],b[i]);
+        printf("vetor a: %d  --- vetor b: %d", a[i],b[i]);
         printf("\n");
     }
 
