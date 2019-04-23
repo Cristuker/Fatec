@@ -1,4 +1,4 @@
-#define ex3
+#define ex5
 
 //exercicio 1
 #ifdef ex1
@@ -109,3 +109,77 @@ int b[n];
 
 }
 #endif // ex3
+//exercicio 7
+#ifdef ex4
+int main(){
+
+int n =1000;
+
+
+while(n >15){
+    printf("Qual e o tamanho do vetor? ");
+    scanf("%d", &n);
+}
+
+int a[n];
+long int b[n];
+long int fat=0;
+int i=0;
+
+ for(int p =0 ; p < n;p++){
+    printf("Digite um numero: ");
+    scanf("%d", &a[p]);
+
+
+
+    i = a[p];
+
+    for(fat = 1 ; i > 1 ;i=i-1){
+        fat=fat*i;
+    }
+    b[p] = fat;
+ }
+ printf("vetor a --------- vetor b");
+ printf("\n");
+ for(int g = 0; g !=n;g++){
+    printf("%d --------- %d",a[g],b[g]);
+    printf("\n");
+ }
+
+
+
+}
+#endif // ex4
+//exercicio 13
+#ifdef ex5
+int main(){
+
+int n = 10;
+float notas[n];
+float aprovados = 0;
+float reprovados=0;
+float media=0;
+float tot=0;
+
+
+for(int i=0; i<n ;i++){
+    printf("Digite uma nota: ");
+    scanf("%f", &notas[i]);
+
+    if(notas[i] >= 7){
+        aprovados++;
+    }else{
+        reprovados++;
+    }
+    media = media+notas[i];
+}
+tot = media/n;
+printf("A quantidade de alunos aprovados foi %2.f e de reprovados foi %2.f e a media da classe foi %2.f", aprovados,reprovados,tot);
+
+}
+#endif // ex5
+
+
+
+
+
