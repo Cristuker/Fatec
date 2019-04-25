@@ -1,4 +1,4 @@
-#define ex5
+#define ex1
 
 //exercicio 1
 #ifdef ex1
