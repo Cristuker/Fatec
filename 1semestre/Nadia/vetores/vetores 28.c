@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define ex3
+#define ex5
 //exercicio 9
 #ifdef ex1
 int main(){
@@ -196,6 +196,72 @@ int i=0;
 //exercicio 18
 #ifdef ex5
 int main(){
+
+int n =15;
+
+while(n >13){
+    printf("Digite o numero de funcionarios (max:13) : ");
+    scanf("%d", &n);
+}
+
+int id[n];
+int salario[n];
+int maior[n];
+int menor[n];
+int chave =1;
+int contM=0;
+int contN=0;
+
+
+for(int i =0; i<n;i++){
+
+    printf("Digite o numero de identificacao do funcionario: ");
+    scanf("%d", &id[i]);
+
+    printf("Agora digite o salario: ");
+    scanf("%d", &salario[i]);
+
+    if(chave ==1){
+        maior[i] = salario[i];
+        menor[i] = salario[i];
+        chave=2;
+    }
+
+    if(salario[i]>900){
+        maior[contM] = id[i];
+        contM++;
+    }
+    if(salario[i]<900){
+        menor[contN] = id[i];
+        contN++;
+    }
+
+}
+printf("Funcionarios com o maior salario: ");
+printf("\n");
+
+for(int i =0; i<contM ;i++){
+    printf("ID : %d", maior[i]);
+    printf("\n");
+}
+
+printf("Funcionarios com o menor salario: ");
+printf("\n");
+
+
+for(int i =0; i <contN ;i++){
+    printf("ID: %d", menor[i]);
+    printf("\n");
+}
+
+printf("Funcionarios e seus salarios");
+printf("\n");
+for(int i =0; i <n ;i++){
+    printf("ID: %d, salario: %d",id[i],salario[i]);
+    printf("\n");
+}
+
+
 
 
 }
