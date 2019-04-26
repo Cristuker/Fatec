@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define ex2
+#define ex3
 //exercicio 9
 #ifdef ex1
 int main(){
@@ -116,7 +116,37 @@ printf("A temperatura mais baixa foi: %d", menor);
 #ifdef ex3
 int main(){
 
+int n=12;
+int a[n];
+int b[n];
+int contB=0;
 
+for(int i =0; i<n;i++){
+    printf("Digite um numero: ");
+    scanf("%d", &a[i]);
+
+    if(a[i]%2==1){
+        b[contB]= a[i]*2;
+        contB++;
+    }
+
+}
+printf("vetor a");
+printf("\n");
+for(int i =0; i<n;i++){
+    printf("%d", a[i]);
+    printf("\n");
+
+}
+
+printf("vetor b");
+printf("\n");
+for(int i =0; i<contB;i++){
+    printf("vetor b: %d", b[i]);
+    printf("\n");
+
+
+}
 }
 #endif // ex3
 
