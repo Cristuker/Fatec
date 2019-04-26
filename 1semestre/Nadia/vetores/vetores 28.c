@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define ex1
+#define ex2
 //exercicio 9
 #ifdef ex1
 int main(){
@@ -68,14 +68,50 @@ for(int i =0; i< n; i++){
 printf("O vetor D teve o total de numeros negativos: %d", negativo);
 }
 #endif // ex1
+
 //exercicio 12
 #ifdef ex2
 int main(){
 
+int n =12;
+int temp[n];
+int maior = 0;
+int menor = 0;
+int media=0;
+int tot=0;
+int comeco =1;
+
+for(int i =1; i<=n;i++){
+    printf("Digite a temperatura media do mes %d :", i);
+    scanf("%d", &temp[i]);
+
+    if(comeco==1){
+        menor=temp[i];
+        comeco =2;
+    }
 
 
+    if(temp[i]> maior){
+        maior = temp[i];
+    }
+    if(temp[i]<menor){
+        menor= temp[i];
+    }
+    media = media+temp[i];
+}
+    tot = media/12;
+for(int i =1; i<n;i++){
+    printf("A temperatura do mes %d foi %d ",i,temp[i]);
+    printf("\n");
+}
+printf("A maior temperatura foi: %d",maior);
+printf("\n");
+printf("A temperatura media foi: %d",tot);
+printf("\n");
+printf("A temperatura mais baixa foi: %d", menor);
 }
 #endif // ex2
+
 //exercicio 17
 #ifdef ex3
 int main(){
@@ -83,6 +119,7 @@ int main(){
 
 }
 #endif // ex3
+
 //exercicio 7
 #ifdef ex4
 int main(){
@@ -124,6 +161,8 @@ int i=0;
 
 }
 #endif // ex4
+
+
 //exercicio 18
 #ifdef ex5
 int main(){
