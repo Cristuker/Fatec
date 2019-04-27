@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define ex3
+#define ex5
 //exercicio 9
 #ifdef ex1
 int main(){
@@ -142,7 +142,7 @@ for(int i =0; i<n;i++){
 printf("vetor b");
 printf("\n");
 for(int i =0; i<contB;i++){
-    printf("vetor b: %d", b[i]);
+    printf("%d", b[i]);
     printf("\n");
 
 
@@ -186,9 +186,6 @@ int i=0;
     printf("%d --------- %d",a[g],b[g]);
     printf("\n");
  }
-
-
-
 }
 #endif // ex4
 
@@ -260,10 +257,6 @@ for(int i =0; i <n ;i++){
     printf("ID: %d, salario: %d",id[i],salario[i]);
     printf("\n");
 }
-
-
-
-
 }
 #endif // ex5
 
