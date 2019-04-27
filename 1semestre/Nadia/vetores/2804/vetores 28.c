@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define ex5
+#define ex3
 //exercicio 9
 #ifdef ex1
 int main(){
