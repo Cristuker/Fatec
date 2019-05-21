@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define ex3
+#define ex4
 
 #ifdef ex2
 int Verifica(int a){
@@ -71,6 +71,43 @@ int main(){
 
     printf("O resultado da divisao e: %2.f",tot);
 
-
 }
 #endif // ex
+
+#ifdef ex4
+
+float RealSalNovo(float salarioF){
+
+    float newSalario,porcentagem;
+
+    if(salarioF < 800){
+        porcentagem = (salarioF*15)/100;
+        newSalario = salarioF+porcentagem;
+    }
+    if(salarioF >= 800 && salarioF <=1000){
+        porcentagem = (salarioF*10)/100;
+        newSalario = salarioF+porcentagem;
+    }
+    if(salarioF >1000){
+        porcentagem = (salarioF*5)/100;
+        newSalario = salarioF+porcentagem;
+    }
+    return newSalario;
+}
+
+int main(){
+
+    float salario;
+    float nsalario;
+
+    printf("Qual o valor do seu salario? ");
+    scanf("%f", &salario);
+
+    nsalario = RealSalNovo(salario);
+
+    printf("O seu salario antigo era: %2.f \n",salario);
+    printf("Agora o seu novo salario e: %2.f \n",nsalario);
+
+
+}
+#endif // ex4
