@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define ex4
+#define ex5
 
 #ifdef ex2
 int Verifica(int a){
@@ -75,11 +75,11 @@ int main(){
 #endif // ex
 
 #ifdef ex4
-
 float RealSalNovo(float salarioF){
 
     float newSalario,porcentagem;
 
+    //calculo do reajuste baseado no valor do salario
     if(salarioF < 800){
         porcentagem = (salarioF*15)/100;
         newSalario = salarioF+porcentagem;
@@ -92,6 +92,7 @@ float RealSalNovo(float salarioF){
         porcentagem = (salarioF*5)/100;
         newSalario = salarioF+porcentagem;
     }
+    //retorno do novo salario
     return newSalario;
 }
 
@@ -103,6 +104,7 @@ int main(){
     printf("Qual o valor do seu salario? ");
     scanf("%f", &salario);
 
+    //atribuição do return da função RealSalNovo, para trabalhar com o valor no metodo principal
     nsalario = RealSalNovo(salario);
 
     printf("O seu salario antigo era: %2.f \n",salario);
@@ -111,3 +113,35 @@ int main(){
 
 }
 #endif // ex4
+
+#ifdef ex5
+char** ParImpar(int n){
+
+    char *status ="";
+
+    if(n%2 ==0 ){
+        status = "par";
+    }else{
+        status = "impar";
+    }
+    return status;
+}
+
+int main(){
+
+    int n;
+    char * resul;
+
+    do{
+        printf("Digite um numero: ");
+        scanf("%d", &n);
+
+    }while(n <= 0);
+
+    resul = ParImpar(n);
+
+    printf("O numero %d e %s",n,resul);
+
+
+}
+#endif // ex5
