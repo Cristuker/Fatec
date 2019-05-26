@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define ex5
+#define ex6
 
 #ifdef ex2
 int Verifica(int a){
@@ -145,3 +145,55 @@ int main(){
 
 }
 #endif // ex5
+
+#ifdef ex6
+
+
+float RealSalNovo(float sal){
+
+    if(sal < 800){
+        sal = sal+(sal*15/100);
+    }
+    if(sal >=800 && sal <=1000){
+        sal = sal+(sal*10/100);
+    }
+    if(sal > 1000){
+        sal = sal+(sal*5/100);
+    }
+    return sal;
+}
+
+
+int main(){
+
+    int n=0;
+
+    do{
+        printf("Quantos salario voce deseja ajustar? ");
+        scanf("%d", &n);
+
+    }while(n>10 || n<=0);
+
+    float K[n];
+    float Nsal[n];
+
+    for(int i=0;i<n;i++){
+        printf("Digite o salario: \n");
+        scanf("%f", &K[i]);
+    }
+
+
+
+    for(int i=0;i<n;i++){
+        Nsal[i] = RealSalNovo(K[i]);
+    }
+    for(int i =0;i<n;i++){
+        printf("Antes do reajuste: %2.f / Depois do reajuste: %2.f \n", K[i],Nsal[i]);
+
+    }
+
+
+
+
+}
+#endif // ex6
