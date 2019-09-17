@@ -1,4 +1,4 @@
-#define ex4
+#define ex5
 #include "stdio.h"
 
 #ifdef ex1
@@ -35,9 +35,6 @@ int main(){
 
 }
 #endif // ex1
-
-
-
 
 #ifdef ex2
 main(){
@@ -155,4 +152,46 @@ printf("Valores depois da trocar a: %d ----- b: %d",a,b);
 
 
 }
+#endif
+
+#ifdef ex5
+
+
+
+
+int limite;
+
+main(){
+int multiplicando;
+
+
+printf("Digite o numero que será determinado o multiplo: ");
+scanf("%d",&multiplicando);
+
+printf("Digite o limite: ");
+scanf("%d",&limite);
+
+int menorMultiplo = multiplo(multiplicando);
+
+printf("O menor menor multiplo de %d com limite %d = %d",multiplicando,limite,menorMultiplo);
+
+
+
+}
+
+int multiplo(int numero){
+
+    int tabuada[limite];
+
+    for(int indice = 1; numero<= limite; indice++){
+
+        tabuada[indice] = numero*indice;
+        if(tabuada[indice] >= limite){
+            return tabuada[indice];
+        }
+
+    }
+
+}
+
 #endif
