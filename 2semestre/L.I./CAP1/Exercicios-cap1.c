@@ -1,4 +1,4 @@
-#define ex5
+#define ex6
 #include "stdio.h"
 
 #ifdef ex1
@@ -155,27 +155,19 @@ printf("Valores depois da trocar a: %d ----- b: %d",a,b);
 #endif
 
 #ifdef ex5
-
-
-
-
 int limite;
-
 main(){
-int multiplicando;
+    int multiplicando;
 
+    printf("Digite o numero que será determinado o multiplo: ");
+    scanf("%d",&multiplicando);
 
-printf("Digite o numero que será determinado o multiplo: ");
-scanf("%d",&multiplicando);
+    printf("Digite o limite: ");
+    scanf("%d",&limite);
 
-printf("Digite o limite: ");
-scanf("%d",&limite);
+    int menorMultiplo = multiplo(multiplicando);
 
-int menorMultiplo = multiplo(multiplicando);
-
-printf("O menor menor multiplo de %d com limite %d = %d",multiplicando,limite,menorMultiplo);
-
-
+    printf("O menor menor multiplo de %d com limite %d = %d",multiplicando,limite,menorMultiplo);
 
 }
 
@@ -186,12 +178,30 @@ int multiplo(int numero){
     for(int indice = 1; numero<= limite; indice++){
 
         tabuada[indice] = numero*indice;
+
         if(tabuada[indice] >= limite){
             return tabuada[indice];
         }
-
     }
-
 }
 
 #endif
+
+#ifdef ex6
+main(){
+
+int segundos;
+
+printf("Digite os segundos: ");
+scanf("%d", &segundos);
+
+int hora = segundos/3600;
+
+int minutos = (segundos/60)-60;
+
+int sec = segundos%60;
+
+
+printf("O resultado da conversao: %d h %1.d min %ds",hora,minutos,sec);
+}
+#endif // ex6
