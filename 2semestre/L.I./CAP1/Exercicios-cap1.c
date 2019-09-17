@@ -1,4 +1,4 @@
-#define ex6
+#define ex7
 #include "stdio.h"
 
 #ifdef ex1
@@ -205,3 +205,20 @@ int sec = segundos%60;
 printf("O resultado da conversao: %d h %1.d min %ds",hora,minutos,sec);
 }
 #endif // ex6
+
+#ifdef ex7
+main(){
+
+int numero;
+
+printf("Digite um numero de 3 digitos para inverter: ");
+scanf("%d",&numero);
+
+    while(numero > 0){
+        printf("%d",numero%10);
+        numero= numero/10;
+    }
+
+
+}
+#endif
