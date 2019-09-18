@@ -1,4 +1,4 @@
-#define ex7
+#define ex8
 #include "stdio.h"
 
 #ifdef ex1
@@ -222,3 +222,59 @@ scanf("%d",&numero);
 
 }
 #endif
+
+#ifdef ex8
+main(){
+
+
+    int valorInicial;
+    int valor;
+    int notasCem;
+    int notasCinquenta;
+    int notasDez;
+
+
+
+    printf("Digite um valor: \n");
+    scanf("%d", &valorInicial);
+    valor = valorInicial;
+
+    if(valor >= 100){
+        notasCem = valor/100;
+        valor = valor - (notasCem*100);
+    }
+
+    if(valor >=50){
+        notasCinquenta = valor/50;
+        valor = valor - (notasCinquenta*50);
+
+    }
+
+    if(valor >=10){
+        notasDez = valor/10;
+        valor = valor - (notasDez*10);
+    }
+
+    printf("O valor %d precisa das seguintes notas...\n",valorInicial);
+    printf("Notas de R$ 100,00: %d \n",notasCem);
+    printf("Notas de R$ 50,00: %d \n", notasCinquenta);
+    printf("Notas de R$ 10,00: %d\n",notasDez);
+    printf("Notas de R$ 1,00: %d \n",valor);
+
+
+}
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
