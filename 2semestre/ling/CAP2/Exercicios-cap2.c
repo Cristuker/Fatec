@@ -1,5 +1,5 @@
 #include <string.h>
-#define ex1
+#define ex2
 
 #ifdef ex1
 main(){
@@ -23,3 +23,51 @@ main(){
 
 }
 #endif
+
+#ifdef ex2
+main(){
+
+printf(" ************************** \n");
+printf(" *  Adivinhando o numero  * \n");
+printf(" ************************** \n");
+printf("\n");
+printf(" *********************************\n");
+printf(" * Pense em um numero de 0 a 9 * \n");
+printf(" * e use os comandos <(menor)    * \n");
+printf(" * =(igual) >(maior) para indicar* \n");
+printf(" * o que o numero e!             * \n");
+printf(" ********************************* \n");
+
+int media = 50;
+int maior = 99;
+int menor = 0;
+char comando ;
+
+
+do{
+
+
+    printf("-------------------------------\n");
+    printf("O seu numero e: %d ? \n",media);
+
+    comando = getchar();
+
+    if(comando == '>'){
+        media = (maior+media)/2;
+    }
+
+    if(comando == '<'){
+        maior = media;
+        media = maior/2;
+    }
+
+
+
+
+}while(comando != '=');
+
+printf("O numero e: %d, eu sabia que ia conseguir!",media);
+
+}
+
+#endif // ex2
