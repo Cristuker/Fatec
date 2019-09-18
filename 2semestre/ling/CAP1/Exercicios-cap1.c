@@ -1,4 +1,4 @@
-#define ex8
+#define ex4
 #include "stdio.h"
 
 #ifdef ex1
@@ -133,7 +133,7 @@ printf("           %c         %d                                 %ld",h,i,j);
 #ifdef ex4
 main(){
 
- int a;
+int a;
 int b;
 
 printf("Digite um numero para a variavel a: ");
@@ -144,11 +144,12 @@ scanf("%d",&a);
 printf("Digite um numero para a variavel b: ");
 scanf("%d",&b);
 
-a=b;
-b=a;
+a= a + b;
+b= a - b;
+a= a - b;
 
 
-printf("Valores depois da trocar a: %d ----- b: %d",a,b);
+printf("Valores depois da trocar a: %d ----- b: %d \n",a,b);
 
 
 }
