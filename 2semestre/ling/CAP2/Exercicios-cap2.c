@@ -32,7 +32,7 @@ printf(" *  Adivinhando o numero  * \n");
 printf(" ************************** \n");
 printf("\n");
 printf(" *********************************\n");
-printf(" * Pense em um numero de 0 a 9 * \n");
+printf(" * Pense em um numero de 0 a 9   * \n");
 printf(" * e use os comandos <(menor)    * \n");
 printf(" * =(igual) >(maior) para indicar* \n");
 printf(" * o que o numero e!             * \n");
