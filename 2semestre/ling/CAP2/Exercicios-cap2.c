@@ -1,5 +1,5 @@
 #include <string.h>
-#define ex8
+#define ex6
 
 #ifdef ex1
 main(){
@@ -235,13 +235,12 @@ printf("Quantos litros de combustivel voce comprou: \n");
 scanf("%f",&litros);
 
 printf("Qual tipo de combustivel voce comprou (A-alcool G-Gasolina) : \n");
-//scanf("%c", &combustivel);
+scanf("%c", &combustivel);
+combustivel = getchar();
+getchar();
 
-//combustivel = getchar();
 
 
-printf("litros %f combustivel %c",litros,combustivel);
-/*
 if(combustivel == 'A'){
 
     totalSemDesconto = litros*3.88;
@@ -270,7 +269,7 @@ if(combustivel == 'G'){
     }
 
 }
-*/
+
 
 //gasolina 1l = 3,88
 //alcool 1l = 3,18
