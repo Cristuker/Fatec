@@ -1,14 +1,15 @@
-#include <string.h>
+#include <stdio.h>
 #define ex7
 
 #ifdef ex1
-main(){
-
 int i[4];
 long int vLong[4];
 unsigned int uInt[4];
 float n[4];
 double nD[4];
+
+main(){
+
 
 
 //Pegar inteiro
@@ -70,9 +71,10 @@ printf("            %5.2f               %6.2f\n",n[3],nD[3]);
 #endif
 
 #ifdef ex2
+int palindromo[10];
 main(){
 
-int palindromo[10];
+
 int aux = 9;
 
 for(int indice = 0; indice < 10; indice ++){
@@ -101,8 +103,9 @@ if(aux == -1){
 #endif
 
 #ifdef ex3
-main(){
 int a, b, c, vetorMulti[2][3][3];
+main(){
+
 	for(a = 0;a < 2;a++){
 		for(b = 0;b < 3;b++){
 			for(c = 0;c < 3;c++){
@@ -125,10 +128,11 @@ int a, b, c, vetorMulti[2][3][3];
 #endif
 
 #ifdef ex4
-main(){
 int a [2] [3];
 int b [2] [3];
 int l [2] [3];
+main(){
+
 int c;
 int i;
 //vetor a
@@ -163,11 +167,12 @@ int i;
 #endif
 
 #ifdef ex5
-main(){
-
 int vet[10];
 int vetPar[10];
 int vetImpar[10];
+main(){
+
+
 int count;
 int countPar = 0;
 int countImpar = 0;
@@ -195,10 +200,11 @@ int countImpar = 0;
 #endif
 
 #ifdef ex6
-main(){
 int vet[10];
 int vetPar[10];
 int vetImpar[10];
+main(){
+
 int par = 0;
 int impar = 0;
 //Pegando dados
@@ -230,9 +236,10 @@ int impar = 0;
 #endif
 
 #ifdef ex7
+int valores[10];
 main(){
 
-int valores[10];
+
 int temp;
 
 
@@ -263,8 +270,9 @@ int temp;
 #endif
 
 #ifdef ex8
-main(){
 int matrix [5][5];
+main(){
+
 int valor;
 int achado = 0;
 //Pegando valores para a matrix

@@ -1,4 +1,4 @@
-#include <string.h>
+#include <stdio.h>
 #define ex6
 
 #ifdef ex1
