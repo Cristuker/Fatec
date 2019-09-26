@@ -231,29 +231,87 @@ int impar = 0;
 
 #ifdef ex7
 main(){
+
 int valores[10];
-int aux;
-int numero=0;
-//Pegar valores
-    for(int i = 0 ; i < 10 ; i++){
-        printf("Digite um numero para o vetor: \n");
-        scanf("%d",&numero);
-//Ordenando-----------------------------
-        for(int c = 0 ; c < 10 ; c++){
-            if(numero < valores[c]){
-                aux = valores[c];
-                valores[c] = numero;
-                valores[c+1] = aux;
-                break;
+int temp;
+
+
+//leitura do Vetor
+    for (int c = 0; c < 10; c++){
+        printf("Digite um numero:");
+        scanf("%d",&valores[c]);
+    }
+
+
+//ordenando o vetor
+    for(int i = 0; i < 10; i++){
+        for(int j = i+1 ; j < 10; j++){
+            if (valores[i]>valores[j]){
+                temp=valores[i];
+                valores[i]=valores[j];
+                valores[j]=temp;
             }
         }
     }
 
-
-//Mostrando vetor final
-    printf("Vetor final: ");
-    for(int i = 0 ; i < 10 ; i++){
-        printf(" %d ",valores[i]);
+    //Impressão do Vetor Ordenado
+    printf("Vetor em ordem crescente: \n");
+    for(int d = 0; d < 10; d++){
+        printf(" %d",valores[d]);
     }
 }
 #endif
+
+#ifdef ex8
+main(){
+int matrix [5][5];
+int valor;
+int achado = 0;
+//Pegando valores para a matrix
+
+    for(int l = 0; l < 5;l++){
+        for(int c = 0;  c < 5; c++){
+            printf("Digite um valor para a linha %d e coluna %d \n",l,c);
+            scanf("%d",&matrix[l][c]);
+        }
+
+    }
+    //Pegando valor para ser buscado na matrix
+    printf("Digite um valor para ser buscado na sua Matrix 5x5 \n");
+    scanf("%d",&valor);
+    //Buscando valor na matrix
+    for(int l = 0; l < 5;l++){
+        for(int c = 0;  c < 5; c++){
+            if(valor == matrix[l][c]){
+                achado = 1;
+                printf("O seu valor %d se encontra na linha %d e coluna %d \n ",valor,l,c);
+                break;
+            }
+        }
+
+    }
+    if(!achado){
+        printf("Não achamos o seu valor!!");
+    }
+
+
+}
+#endif // ex8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
