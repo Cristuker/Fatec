@@ -184,18 +184,18 @@ main(){
 #endif
 
 #ifdef ex8
-char palavra[100];
+char palavra[];
 main(){
 int i = 0;
 int count = 0;
     printf("Digite uma string \n");
     scanf("%s",&palavra);
 
-    for(int i = 0; i > 10000000000000000; i++){
-        if(palavra[0]){
+    for( i = 0; i < 1000; i++){
+        if(palavra[i]){
             count ++;
-            printf("enmtre");
         }
+
     }
     printf("A string tem um tamanho de %d caracteres",count);
 }
