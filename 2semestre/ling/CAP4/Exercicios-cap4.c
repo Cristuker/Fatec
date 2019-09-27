@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define ex5
+#define ex8
 
 #ifdef ex1
 char nome [5][7];
@@ -111,15 +111,110 @@ int dia = 0;
 #endif
 
 #ifdef ex5
-char letras [10][1];
+char *letras [10][1];
+char *minusc [25] = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"};
+char *maiusc [25] = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","U","V","W","X","Y","Z"};
+
 main(){
 
-
-    for(int i = 0; i < 10 ; i++){
-        printf("Digite um caractere para a posicao %d\n",i);
-        scanf("%s",&letras[i]);
+//Pegando letras
+    for(int d = 0; d < 10 ; d++){
+        printf("Digite um caractere para a posicao apenas minusculo %d\n",d);
+        scanf("%s",&letras[d]);
     }
-    int teste = (int)letras[1];
-printf(teste);
+//Convertendo pra maisculo
+    for(int i = 0; i < 10 ; i++){
+        for(int c = 0; c < 25 ; c++){
+            if(strcmp(letras[i],minusc[c])==0){
+                printf("A letra em maisculo e: %s \n",maiusc[c]);
+            }
+        }
+    }
 }
 #endif
+
+#ifdef ex6
+char *letras [10][1];
+char *minusc [25] = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"};
+char *maiusc [25] = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","U","V","W","X","Y","Z"};
+main(){
+//pegando letras
+    for(int d = 0; d < 10 ; d++){
+        printf("Digite um caractere para a posicao apenas maisculo %d\n",d);
+        scanf("%s",&letras[d]);
+    }
+//convertendo para minusculo
+    for(int i = 0; i < 10 ; i++){
+        for(int c = 0; c < 25 ; c++){
+            if(strcmp(letras[i],maiusc[c])==0){
+                printf("A letra em minusculo e: %s \n",minusc[c]);
+            }
+        }
+    }
+}
+#endif
+
+#ifdef ex7
+char palavra[50];
+int asc1[50];
+main(){
+
+    printf("Digite uma palavra para contar os caracteres: \n");
+    scanf("%s",&palavra);
+//para mostra um caractere use apenas o C
+//Somando mais um em cada numero da tabela ascii
+    for(int i = 0; i <= 50; i++){
+        if(palavra[i]){
+            int aux;
+            aux = (int) palavra[i];
+            asc1[i] = aux + 1;
+        }
+    }
+//Mostrando resultado
+    for(int d = 0; d <= 50; d++){
+        if(asc1[d]){
+            char i = (char) asc1[d];
+            printf("%c",i);
+        }
+    }
+
+
+
+}
+#endif
+
+#ifdef ex8
+char palavra[100];
+main(){
+int i = 0;
+int count = 0;
+    printf("Digite uma string \n");
+    scanf("%s",&palavra);
+
+    for(int i = 0; i > 10000000000000000; i++){
+        if(palavra[0]){
+            count ++;
+            printf("enmtre");
+        }
+    }
+    printf("A string tem um tamanho de %d caracteres",count);
+}
+#endif // ex8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
