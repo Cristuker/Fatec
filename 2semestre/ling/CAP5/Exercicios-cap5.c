@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define ex5
+#define ex8
 
 #ifdef ex1
 
@@ -224,7 +224,6 @@ char *letter[1];
 #endif
 
 #ifdef ex5
-
 int comparaString(char str[10], char str2[10]){
     int countStr = 0;
     int countStr2 = 0;
@@ -234,18 +233,24 @@ int comparaString(char str[10], char str2[10]){
         for(int i = 0; i < 1000; i++){
             if(str[i]){
                 countStr++;
+            }else{
+                break;
             }
         }
         for(int i = 0; i < 1000; i++){
             if(str2[i]){
                 countStr2++;
+            }else{
+                break;
             }
+        }
+        if(str > str2){
+            return 2;
+        }else{
+            return 3;
         }
     }
 }
-
-
-
 
 main(){
     char str[10];
@@ -255,5 +260,128 @@ main(){
 
     printf("Digite a segunda string: \n");
     scanf("%s",&str2);
+    int result = comparaString(str,str2);
+    printf("O retorno da funcao e: %d",result);
 }
 #endif
+
+#ifdef ex6
+int somaFatorial(int num){
+    int fat;
+    for(fat = 1; num> 1; num = num-1 ){
+        fat = fat*num;
+    }
+    return fat;
+}
+
+main(){
+int cont =1;
+int decimal,unidade,n;
+printf("Digite um numero: \n");
+scanf("%d",&n);
+
+int result = somaFatorial(n);
+
+decimal = result;
+if(decimal > 10){
+    cont++;
+    decimal = decimal/10;
+}
+    unidade = result-(cont*10);
+
+int soma = unidade + decimal;
+printf("O resultado de %d + %d = %d \n",decimal,unidade,soma);
+}
+#endif // ex6
+
+#ifdef ex7
+int exponenciacao(int numero,int expoente){
+    int result = numero;
+
+    for(int i = 0; i < expoente;i++){
+        result = result*numero;
+    }
+    return result;
+}
+main(){
+int resultado;
+int num,expo;
+printf("Digite para a base \n");
+scanf("%d",&num);
+
+printf("Digite um numero para o expoente \n");
+scanf("%d",&expo);
+
+resultado = exponenciacao(num,expo);
+printf("%d",resultado);
+}
+#endif // ex7
+
+#ifdef ex8
+int sinal(int num){
+    if(num < 0){
+        return 0;
+    }
+    if(num >0){
+        return 1;
+    }
+    if(num == 0){
+        return -1;
+    }
+}
+
+int soma(int n1, int n2){
+    int comeco,fim;
+    int tot=0;
+    if(n1 > n2){
+        comeco = n2;
+        fim = n1;
+    }else{
+        comeco = n1;
+        fim = n2;
+    }
+    //tot = comeco;
+for(int i = comeco; i < fim; i++ ){
+    tot = tot + i;
+}
+return tot;
+}
+
+int multi(int n1, int n2){
+    int comeco,fim;
+    int tot=0;
+    if(n1 > n2){
+        comeco = n2;
+        fim = n1;
+    }else{
+        comeco = n1;
+        fim = n2;
+    }
+    //tot = comeco;
+for(int i = comeco; i < fim; i++ ){
+    tot = tot * i;
+}
+}
+main(){
+int n1,n2;
+printf("Digite um numero: \n");
+scanf("%d",&n1);
+
+int s1 = sinal(n1);
+
+printf("Digite outro numero :\n");
+scanf("%d",&n2);
+
+int s2 = sinal(n2);
+int s;
+
+if(s1 == s2 == 1){
+    printf("A soma dos numero e %d", soma(n1,n2));
+}
+if(s1 ==s2 == 0){
+    printf("A multiplicao entre esses numero e %d", multi(n1,n2));
+}
+
+soma(n1,n2);
+}
+#endif // ex8
