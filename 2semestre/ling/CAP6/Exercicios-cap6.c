@@ -1,13 +1,6 @@
 #include <stdio.h>
-#define ex8
-/*
-int rodar = 1;
-while(rodar){
-        printf("Caso queira rodar novamente digite 1 se quiser parar digite 0 \n");
-        scanf("%d",&rodar);
-        }
+#define ex10
 
-*/
 #ifdef ex1
 main(){
 
@@ -215,7 +208,7 @@ float celsius, kelvin,fahr;
 #ifdef ex8
 main(){
 int rodar = 1;
-int anoNasc,mesNasc,diaNasc,anoAtual,mesAtual,diaAtual;
+int anoNasc,mesNasc,diaNasc,anoAtual,mesAtual,diaAtual,anos,meses,dias;
     while(rodar){
     //Coletando data de nascimento
         printf("Digite o ano em que voce nasceu: \n");
@@ -239,9 +232,114 @@ int anoNasc,mesNasc,diaNasc,anoAtual,mesAtual,diaAtual;
         scanf("%d",&diaAtual);
         printf("--------------------------------------------\n");
     //Trabalhando com os dados
+        if(anoNasc < anoAtual){
+            anos = anoAtual-anoNasc;
+            if(mesAtual > mesNasc){
+                meses = mesAtual - mesNasc;
+            }else{
+                meses = mesNasc - mesAtual;
+            }
+            if(diaNasc > diaAtual){
+                dias = diaNasc - diaAtual;
+            }else{
+                dias = diaAtual - diaNasc;
+            }
+        }else{
+            printf("Digite uma data valida! \n");
+        }
+
+        printf("Voce tem %d anos %d meses e %d dias...\n",anos,meses,dias);
+        printf("--------------------------------------------\n");
+        printf("Caso queira rodar novamente digite 1 se quiser parar digite 0 \n");
+        scanf("%d",&rodar);
+    }
+}
+#endif
+
+#ifdef ex9
+main(){
+int rodar =1;
+int dia,mes,ano,a,b,d,res;
+    while(rodar){
+
+            //Pegando ano
+        do{
+
+            printf("Digite o ano: \n");
+            scanf("%d",&ano);
+
+        }while(ano <= 0);
+
+        //Pegando mes
+        do{
+
+            printf("Digite o mes: \n");
+            scanf("%d",&mes);
+
+        }while(mes <= 0 || mes > 12);
+        //Pegando dia
+        do{
+
+            printf("Digite o dia: \n");
+            scanf("%d",&dia);
+
+        }while(dia <= 0 || dia > 31);
+
+        a = ano-1900;
+        b = a/4;
+
+        if (a%4 == 0){
+            b -= 1;
+        }
+
+        if (mes == 1 || mes ==10){
+            mes = 0;
+        }
+
+        else if (mes==2 || mes==3 || mes==11){
+            mes=3;
+        }
+
+        else if (mes==4 || mes==7){
+            mes=6;
+        }
+
+        else if (mes==5){
+            mes=1;
+        }
+
+        else if (mes==6){
+            mes=4;
+        }
+
+        else if (mes==8){
+            mes=2;
+        }
+
+        else if (mes==9 || mes==12){
+            mes=5;
+        }
 
 
-
+        d = dia-1;
+        res = a+b+mes+d;
+        res = (res%7);
+        printf("--------------------------------------------\n");
+        if (res == 0){
+            printf("Segunda-Feira! \n");
+        }else if (res == 1){
+            printf("Terca-Feira! \n");
+        }else if (res == 2){
+            printf("Quarta-Feira! \n");
+        }else if (res == 3){
+            printf("Quinta-Feira! \n");
+        }else if (res == 4){
+            printf("Sexta-Feira! \n");
+        }else if (res == 5){
+            printf("Sabado! \n");
+        }else if (res == 6){
+            printf("Domingo! \n");
+        }
 
         printf("--------------------------------------------\n");
         printf("Caso queira rodar novamente digite 1 se quiser parar digite 0 \n");
@@ -249,3 +347,71 @@ int anoNasc,mesNasc,diaNasc,anoAtual,mesAtual,diaAtual;
     }
 }
 #endif
+
+#ifdef ex10
+main(){
+int rodar = 1;
+    while(rodar){
+
+        float valor,imposto;
+        char *siglas [4] ={ "MG","SP","RJ","MS"};
+        char *estado[1];
+        int estadoID;
+
+        printf("Digite o valor do produto: \n");
+        scanf("%f",&valor);
+
+        printf("Digite a sigla do estado de destino: \n");
+        scanf("%s",&estado);
+
+        for(int i = 0; i <= 4; i++){
+            if(strcmp(estado,siglas[i]) == 0){
+                estadoID = i;
+                break;
+            }else if(i == 4){
+                printf("Digite um estado valido... \n");
+            }
+        }
+        printf("--------------------------------------------\n");
+
+        switch(estadoID){
+            case(0):{
+                imposto = (valor * 7)/100;
+                valor = valor + imposto;
+                printf("O valor do produto com o acrescimo de imposto e: %.2f \n",valor);
+                break;
+            }
+            case(1):{
+                imposto = (valor * 12)/100;
+                valor = valor + imposto;
+                printf("O valor do produto com o acrescimo de imposto e: %.2f \n",valor);
+                break;
+            }
+            case(2):{
+                imposto = (valor * 15)/100;
+                valor = valor + imposto;
+                printf("O valor do produto com o acrescimo de imposto e: %.2f \n",valor);
+                break;
+            }
+            case(3):{
+                imposto = (valor * 8)/100;
+                valor = valor + imposto;
+                printf("O valor do produto com o acrescimo de imposto e: %.2f \n",valor);
+                break;
+            }default:{
+                printf("Sem nenhum resultado para mostrar pois nao foi digitado um valor valido. \n");
+            }
+
+        }
+
+        printf("--------------------------------------------\n");
+        printf("Caso queira rodar novamente digite 1 se quiser parar digite 0 \n");
+        scanf("%d",&rodar);
+    }
+
+}
+#endif
+
+
+
+
