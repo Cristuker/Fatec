@@ -1,5 +1,5 @@
 #include "stdio.h"
-#define ex2
+#define ex3
 
 #ifdef ex1
 struct numeros{
@@ -59,32 +59,36 @@ struct pessoa{
     char nome[10];
     char end[20];
     char cidade[20];
-    char estado[2];
+    char estado[3];
     char cep[11];
 };
 
 struct pessoa dados[4];
 
-void addDados(int pessoaF){
+addDados(int pessoaF){
 
-printf("Digite o nome para adicionar a pessoa numero %d \n",pessoaF);
+printf("Digite um nome:\n");
 scanf("%s",&dados[pessoaF].nome);
+getchar();
 
-printf("Digite o endereço ate 20 caracteres *sem acentos e espaços*: \n");
-scanf("%s",&dados[pessoaF].end);
+printf("Digite o endereco ate 20 caracteres *sem acentos e espacos*: \n");
+gets(dados[pessoaF].end);
+
 
 printf("Digite o nome da cidade ate 20 caracteres: \n");
-scanf("%s",&dados[pessoaF].cidade);
+gets(dados[pessoaF].cidade);
+
+
 
 printf("Digite a sigla do estado: \n");
-scanf("%s",&dados[pessoaF].estado);
+gets(dados[pessoaF].estado);
 
 printf("Digite o cep ate 11 caracteres: \n");
-scanf("%s",&dados[pessoaF].cep);
+gets(dados[pessoaF].cep);
 
 }
 
-void mostrarDados(int pessoaD){
+mostrarDados(int pessoaD){
 
     printf("Nome: %s \n",dados[pessoaD].nome);
     printf("Endereco: %s \n",dados[pessoaD].end);
@@ -103,7 +107,7 @@ int pessoa;
 
 while(acao == 1){
     printf("        ===MENU===\n");
-    printf("[1]Para adicionar ou alterar dados \n[2] para mostrar dados \n[0] para sair do programa \n");
+    printf("[1] Para adicionar ou alterar dados \n[2] Para mostrar dados \n[0] Para sair do programa \n");
     printf("-> ");
     scanf("%d",&acao);
 
@@ -115,11 +119,47 @@ while(acao == 1){
     }
 
     if(acao == 2){
-        mostrarDados(acao);
+        printf("Digite o numero da pessoa que deseja alterar/inserir dados de 0 a 4 \n");
+        scanf("%d",&pessoa);
+        mostrarDados(pessoa);
     }
 
 }
 
 
+}
+#endif
+
+#ifdef ex3
+main(){
+    char acao;
+
+    struct pontos{
+        int X;
+        int Y;
+    };
+
+    struct pontos posicao;
+
+    double raiz;
+    int potX, potY, soma;
+
+    do{
+        printf("Digite a posicao de X: ");
+        scanf("%d", &posicao.X);
+
+        printf("Digite a posicao de Y: ");
+        scanf("%d", &posicao.Y);
+
+        potX = pow(posicao.X,2);
+        potY = pow(posicao.Y,2);
+        soma = potX+potY;
+        raiz = sqrt(soma);
+
+        printf("A distancia e': %f ", raiz);
+        getchar();
+        printf("\nDeseja continuar? S/N");
+        scanf("%c",&acao);
+    }while(acao == 's');
 }
 #endif
