@@ -1,5 +1,5 @@
 #include "stdio.h"
-#define ex5
+#define ex6
 
 #ifdef ex1
 main(){
@@ -206,8 +206,6 @@ char str1[10],str2[10];
 
 char *pc1, *pc2;
 
-
-
 comparaString(char stri1[10], char stri2[10]){
 
     for(int i = 0; i <= 10; i++){
@@ -226,10 +224,8 @@ main(){
 
 int acao = 0;
 
-
 pc1 = &str1[0];
 pc2 = &str2[0];
-
 
 do{
 
@@ -250,10 +246,6 @@ do{
 
 
 }while(acao);
-
-
-
-
 
 }
 #endif
@@ -294,7 +286,6 @@ pim = &media;
 
 }
 
-
 main(){
 
 int acao;
@@ -314,3 +305,9 @@ pia = &acao;
 
 }
 #endif
+
+#ifdef ex6
+main(){
+
+}
+#endif // ex6
