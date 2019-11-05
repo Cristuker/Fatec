@@ -238,54 +238,277 @@ do{
 #endif
 
 #ifdef ex4
-comparaString(char *stri1, char *stri2){
-
-    for(int i = 0; i <= 10; i++){
-        printf(" entrei na difereca %c %c\n",stri2[i],stri1[i]);
-        if(stri1[i] != stri2[i]){
-            printf("As string sao iguais. \n");
-            break;
-        }
-        if(i == 10){
-            printf("As strings sao diferentes \n");
-        }
-    }
-
-}
-
 main(){
 
-char str1[10], str2[10];
+char nom1[11], *p1;
+char nom2[11], *p2;
 
-char *pc1, *pc2;
+p1 = &nom1[0];
+p2 = &nom2[0];
 
+    for(;;){
+        printf("Para sair apenas aperte enter... \n");
 
-int acao = 0;
+        printf("Digite nome1: \n>");
+        gets(p1);
 
-pc1 = &str1[0];
-pc2 = &str2[0];
+        if( *(p1 + 0) == '\0')
+            break;
+        printf("Digite nome2: \n>");
+        gets(p2);
 
-do{
-
-    printf("\t==MENU== \n1-Para comparar string \n0-Para sair \n> ");
-    scanf("%d",&acao);
-
-    if(acao == 1){
-
-        printf("Digite uma string de ate 10 caracteres: \n");
-        scanf("%s",&pc1);
-
-        printf("Digite outra string de ate 10 caracteres: \n");
-        scanf("%s",&pc2);
-
-        comparaString(&pc1,&pc2);
+    comparaString(p1,p2);
     }
+}
 
-
-}while(acao);
+comparaString(char *stri1, char *stri2){
+int x;
+for(x=0;*(stri1 + x) != '\0';x++)
+    if(*(stri1 + x) != *(stri2 + x))
+        break;
+if(*(stri1 + x) == '\0' && *(stri2 + x) == '\0')
+    printf("São iguais \n");
+else
+    printf("São diferentes \n");
 
 }
 #endif
 
 #ifdef ex5
+struct reg{
+    char no[20];
+    char end[20];
+    char cid[20];
+    char es[3];
+    char cep[10];
+};
+
+main(){
+struct reg c[4], *preg;
+int x;
+int op;
+
+preg = &c[0];
+
+for(;;){
+    printf("1 - Entrar dados\n");
+    printf("2 - Listar dados\n");
+    printf("3 - Sair\n");
+    scanf("%d",&op);
+    getchar();
+ if(op == 3)
+        break;
+
+    switch(op){
+            case 1 :
+            for(x = 0 ; x < 2 ; x++){
+                printf("Digite um nome:");
+                gets((preg+x) -> no);
+
+                printf("Digite um endereco:");
+                gets((preg+x)->end);
+
+                printf("Digite um cidade:");
+                gets((preg+x)->cid);
+
+                printf("Digite um estado:");
+                gets((preg+x)->es);
+
+                printf("Digite um cep:");
+                gets((preg+x)->cep);
+
+                printf("\n");
+            }
+                break;
+            case 2 :
+            for(x = 0; x < 2 ; x++){
+                printf("\n");
+                printf("Listando registro %d \n",x);
+                printf("Nome: %s\n",(preg+x)->no);
+                printf("Endereco: %s\n",(preg+x)->end);
+                printf("Cidade: %s\n",(preg+x)->cid);
+                printf("Estado: %s\n",(preg+x)->es);
+                printf("Cep: %s\n",(preg+x)->cep);
+            }
+            default:
+            break;
+   }
+}
+}
+#endif
+
+#ifdef ex6
+struct reg{
+    char no[20];
+    char end[20];
+    char cid[20];
+    char es[3];
+    char cep[10];
+};
+
+main(){
+struct reg c[4], *p;
+int x;
+int op;
+
+p = &c[0];
+
+read(p);
+
+    for(;;){
+        printf("1 - entra dados\n");
+        printf("2 - lista dados\n");
+        printf("3 - comp dados\n");
+        printf("4 - altera dados\n");
+        printf("5 - exclui dados\n");
+        printf("6 - sair\n");
+        scanf("%d",&op);
+        getchar();
+     if(op == 6)
+            break;
+
+        switch(op){
+            case 1 :
+                entra(p);
+                break;
+            case 2 :
+                imp(p);
+                break;
+            case 3 :
+                x = comp(p);
+                if(x != -1)
+                    printf("iguais\n");
+                else
+                    printf("diferentes\n");
+                break;
+            case 4 :
+                altera(p);
+                break;
+             case 5 :
+                exclui(p);
+                break;
+       }
+    }
+}
+
+entra(struct reg *p){
+    int x;
+    for(x=0;x<2;x++){
+        printf("digite o nome:");
+        gets((p+x) -> no);
+        printf("digite o endereco:");
+        gets((p+x)->end);
+        printf("digite o cidade:");
+        gets((p+x)->cid);
+        printf("digite o estado:");
+        gets((p+x)->es);
+        printf("digite o cep:");
+        gets((p+x)->cep);
+        printf("\n");
+
+    }
+    save(p);
+}
+
+imp(struct reg *p){
+    int x;
+    for(x=0;x<2;x++){
+        printf("\n o nome: %s\n",(p+x)->no);
+        printf(" o endereco: %s\n",(p+x)->end);
+        printf(" o cidade: %s\n",(p+x)->cid);
+        printf(" o estado: %s\n",(p+x)->es);
+        printf(" o cep: %s\n",(p+x)->cep);
+    }
+}
+
+comp(struct reg *p){
+
+    char nome1[20], *p1;
+    int x,y;
+    p1=nome1;
+
+    printf("digite nome1: \n");
+    scanf("%s",p1);
+
+
+    for(y=0;y<2;y++){
+
+        for(x=0;*(p1 + x) != '\0';x++){
+            if(*(p1 + x) != (p + y)->no[x])
+                break;
+        }
+
+        if(*(p1 + x) == '\0' && (p + y)->no[x] == '\0'){
+
+            return y;
+        }
+
+    }
+    return -1;
+}
+
+altera(struct reg *p){
+    int x;
+    x = comp(p);
+    if(x == -1){
+        printf("nao existe\n");
+        return;
+    }
+    getchar();
+    printf("digite o nome:");
+    gets((p+x) -> no);
+    printf("digite o endereco:");
+    gets((p+x)->end);
+    printf("digite o cidade:");
+    gets((p+x)->cid);
+    printf("digite o estado:");
+    gets((p+x)->es);
+    printf("digite o cep:");
+    gets((p+x)->cep);
+    printf("\n");
+    save(p);
+}
+
+exclui(struct reg *p){
+
+    int x;
+    x = comp(p);
+    if(x == -1){
+        printf("nao existe\n");
+        return;
+    }
+    getchar();
+    printf("apaga registro!\n");
+    printf("nome e': %s\n",(p+x) -> no);
+    (p+x) -> no[0] = '*';
+    save(p);
+
+}
+save(struct reg *p){
+    int x;
+    struct reg temp;
+    FILE *pa;
+
+    pa=fopen("cad","w");
+    for(x=0;x<2;x++){
+        printf("\n o nome: %s\n",(p+x)->no);
+        printf(" o endereco: %s\n",(p+x)->end);
+        printf(" o cidade: %s\n",(p+x)->cid);
+        printf(" o estado: %s\n",(p+x)->es);
+        printf(" o cep: %s\n",(p+x)->cep);
+        fwrite((p+x),sizeof(temp),1,pa);
+    }
+    fclose(pa);
+}
+
+read(struct reg *p){
+    int x;
+    struct reg temp;
+    FILE *pa;
+    pa=fopen("cad","r");
+    for(x=0;x<2;x++){
+        fread((p+x),sizeof(temp),1,pa);
+    }
+    fclose(pa);
+}
 #endif
