@@ -149,6 +149,7 @@ void deletarContato(struct Contact *contact){
 
 void getContatoPorNome(struct Contact *contact){
 
+
     if((p = fopen("contacts.txt", "r+")) == NULL){
         printf("erro na abertura do arquivo \n");
         exit(0);
@@ -183,6 +184,7 @@ void getContato(struct Contact *contact){
 }
 
 void getContatoPelaInicial(struct Contact *contact){
+
 
     if((p = fopen("contacts.txt", "r+")) == NULL){
         printf("erro na abertura do arquivo \n");
