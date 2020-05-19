@@ -1,5 +1,15 @@
 {
     "files.associations": {
-        "CAP1 2019 var.C": "cpp"
+        "CAP1 2019 var.C": "cpp",
+        "lista5.C": "cpp",
+        "lista1.C": "cpp",
+        "lista2.C": "cpp",
+        "lista3.C": "cpp",
+        "lista4.C": "cpp",
+        "lista6.C": "cpp",
+        "lIista7 stru.C": "cpp",
+        "lista 8.C": "cpp",
+        "lista9.C": "cpp",
+        "lista10.C": "cpp"
     }
 }
