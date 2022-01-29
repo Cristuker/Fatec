@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE pessoas[
+<!ELEMENT pessoas (pessoa+)>
+<!ELEMENT pessoa (nome,email*,idade)>
+<!ELEMENT nome (#PCDATA)>
+<!ATTLIST nome sexo CDATA "F">
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT idade (#PCDATA)>
+]>
+<?xml:stylesheet type = "text/xsl" href="TemplatePessoas3.xsl"?>
+<pessoas>
+    <pessoa>
+        <nome sexo="M">Marcos</nome>
+        <email>ful@ano.com.br</email>
+        <idade>20</idade>
+    </pessoa>
+    <pessoa>
+        <nome sexo="F">Maria</nome>
+        <email>blabla@eeee.com</email>
+        <email>bliblibli@xxx.com</email>
+        <idade>56</idade>
+     </pessoa>
+    <pessoa>
+        <nome>Ana Paula</nome>
+        <email>yyy@tttt.zzz</email>
+        <idade>29</idade>
+     </pessoa>
+ </pessoas>
