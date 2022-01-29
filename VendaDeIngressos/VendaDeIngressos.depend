@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1581890545 source:/home/recruta/github/estrutura-de-dados/VendaDeIngressos/main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	"functions.h"
+
+1582397188 /home/recruta/github/estrutura-de-dados/VendaDeIngressos/functions.h
+	<time.h>
+
