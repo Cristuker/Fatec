@@ -1,0 +1,55 @@
+OrdemDeServico = 
+    + cd_ordemSevico
+    + dt_ordemSevico
+    + ic_situacao
+
+    Cliente =
+        + nm_cliente
+        + ds_email
+        + nm_cidade
+        + cd_fone1
+        (+ cd_fone2)
+
+    ServicoSolicitado =
+        {
+            + cd_servico
+            + nm_servico
+            + qt_servico
+            + vl_servico
+            + vl_item
+            + nm_execucao
+        }
+        + vl_subtotal
+        
+    Peças =
+        {
+            + cd_peca
+            + nm_peca
+            + qt_peca
+            + vl_peca
+            + vl_item
+            + nm_solicitacao
+        }
+        + vl_subtotal
+
+    Produtos =
+        {
+            + cd_produtos
+            + nm_produtos
+            + qt_produtos
+            + vl_produtos
+            + vl_item
+            + nm_solicitacao
+        }
+        + vl_subtotal
+
+    + vl_totalOrdemServico
+
+    Pagamento = 
+        + ic_formaPagamento
+        {
+            + qt_parcelas
+            + dt_parcela
+            + vl_parcela
+        }
+        

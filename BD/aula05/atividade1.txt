@@ -1,0 +1,4 @@
+A)
+    F1 - Pois apenas as chaves primárias estão explicitas. Existe espaço para criação de outras tabelas e também identificar dependenias.
+
+B) Arquivo: atividade1-Normalizacao

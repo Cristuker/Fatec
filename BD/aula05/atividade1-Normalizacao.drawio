@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" modified="2020-09-25T00:02:39.084Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="gui3DMgj3Eykn1IbE-gD" version="13.7.5" type="github">
+  <diagram id="y0vhaDIuUsFF-q2P19YN" name="Page-1">
+    <mxGraphModel dx="1422" dy="725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="v412A7MM2bUP_NebAzWg-8" value="&lt;font style=&quot;font-size: 20px&quot;&gt;FN1&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v412A7MM2bUP_NebAzWg-9" value="&lt;font style=&quot;font-size: 20px&quot;&gt;FN2&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v412A7MM2bUP_NebAzWg-10" value="&lt;font style=&quot;font-size: 20px&quot;&gt;FN3&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v412A7MM2bUP_NebAzWg-5" value="Funcionários" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+          <mxGeometry x="480" y="220" width="240" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="v412A7MM2bUP_NebAzWg-6" value="+ cd_funcionario(PK)&#xa;+ nm_filhos" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="v412A7MM2bUP_NebAzWg-5" vertex="1">
+          <mxGeometry y="30" width="240" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="v412A7MM2bUP_NebAzWg-13" value="Funcionários" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+          <mxGeometry x="480" y="550" width="240" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="v412A7MM2bUP_NebAzWg-14" value="+ cd_funcionario(PK)&#xa;+ nm_funcionario&#xa;+ cd_celular&#xa;+ nm_filhos" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="v412A7MM2bUP_NebAzWg-13" vertex="1">
+          <mxGeometry y="30" width="240" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="v412A7MM2bUP_NebAzWg-1" value="Empresa" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+          <mxGeometry x="80" y="220" width="240" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="v412A7MM2bUP_NebAzWg-2" value="+ cd_empresa(PK)&#xa;+ ds_cidade" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="v412A7MM2bUP_NebAzWg-1" vertex="1">
+          <mxGeometry y="30" width="240" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="v412A7MM2bUP_NebAzWg-11" value="Empresa" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+          <mxGeometry x="80" y="550" width="240" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="v412A7MM2bUP_NebAzWg-12" value="+ cd_empresa(PK)&#xa;+ nm_empresa&#xa;+ cd_telefone&#xa;+ ds_cidade" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="v412A7MM2bUP_NebAzWg-11" vertex="1">
+          <mxGeometry y="30" width="240" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="XtjTuhzcm_rFPXJNpAQE-12" value="&lt;font style=&quot;font-size: 16px&quot;&gt;A)    F1 - Pois apenas as chaves primárias estão explicitas. Existe espaço para criação de outras tabelas e também identificar dependenias.&lt;br&gt;&lt;br&gt;B)&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="30" width="550" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

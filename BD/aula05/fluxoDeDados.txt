@@ -1,0 +1,15 @@
+TabelaEstufa = 
+    cd_estufa
++   ds_estufa
++   ds_areaOcupada
++   {
+        +   cd_planta
+        +   nm_Plata
+        +   dt_plantacao
+        +   ds_origemPlanta
+        +   qt_platanda
+        +   ds_localizaoPlanta   
+    }
+    +   cd_cuidadosEspecial
+    +   ds_cuidadosEspecial
+    +   ic_cuidadosEspecial
