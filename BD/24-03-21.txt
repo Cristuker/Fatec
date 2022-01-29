@@ -1,0 +1,55 @@
+1. 
+
+    create table Autor_Livro (
+        cd_autor int,
+        cd_livro int
+    );
+    EXEC sp_rename 'Autor_Livro.cd_autor', 'FK_Autor', 'COLUMN';
+    EXEC sp_rename 'Autor_Livro.cd_livro', 'FK_Livro', 'COLUMN';
+    alter table Autor_Livro add constraint PK_Autor_Livro unique (FK_Autor, FK_Livro);
+
+    INSERT INTO Autor_Livro (FK_Autor, FK_Livro) VALUES (1, 3);
+    INSERT INTO Autor_Livro (FK_Autor, FK_Livro) VALUES (1, 2);
+    INSERT INTO Autor_Livro (FK_Autor, FK_Livro) VALUES (2, 1);
+    INSERT INTO Autor_Livro (FK_Autor, FK_Livro) VALUES (3, 4);
+    INSERT INTO Autor_Livro (FK_Autor, FK_Livro) VALUES (4, 2);
+    INSERT INTO Autor_Livro (FK_Autor, FK_Livro) VALUES (4, 3);
+
+2.
+    ALTER TABLE Livro
+    ADD qt_Edicao INT CONSTRAINT ck_qtEdicao CHECK (qt_edicao < 20)
+
+    ALTER TABLE Livro
+    DROP CONSTRAINT ck_qtEdicao
+    GO
+
+    ALTER TABLE Livro
+    DROP COLUMN qt_Edicao
+    matheus lopes19:40
+
+3.
+    ALTER TABLE Livro
+    CHANGE vl_Livro vl_VolumeLivro;
+
+4.
+    DELETE FROM Livro WHERE cd_Livro >= 2 AND vl_Livro > 50.00 AND dt_Lancamento IS NOT NULL;
+
+5. 
+    UPDATE Livro SET vl_Livro = 0 WHERE dt_Lancamento IS NULL OR vl_Livro < 5.00;
+
+6.
+    SELECT FK_Livro, count(FK_Autor) AS "Autores" FROM Autor_Livro GROUP BY FK_Livro HAVING Count(FK_Autor) >= 2;
+
+7. 
+    select cd_Editora, avg(vl_Livro) from Livro where vl_Livro > 45.00 group by cd_Editora ;
+
+8. 
+    SELECT 
+        l.cd_Livro, 
+        l.nm_Titulo,
+        a.ds_Assunto,
+        l.vl_Livro 
+    FROM Livro l 
+    INNER JOIN Assunto a 
+        ON a.sg_Assunto = l.sg_Assunto  
+    WHERE l.vl_Livro != 0 AND a.sg_Assunto IN ('A', 'D');

@@ -1,0 +1,38 @@
+1.  Alter table Custo 
+    Add cd_custo INT not null;
+
+    Alter Table Custo
+    ADD Constraint
+    PK_Custo Primary Key (cd_custo);
+
+    Alter Table Custo
+    Add Constraint FK_Equipamento Foreign Key (cd_Equipamento)  
+    References Equipamento;
+
+    Alter Table Custo
+    Add Constraint FK_Fornecedor Foreign Key (cd_Forn)  
+    References Fornecedor;
+
+2.  alter table Custo add qt_Equipamento int;
+    alter table Custo add constraint qtEquipamentoLimite check (qt_Equipamento < 20);
+
+    alter table Custo drop constraint qtEquipamentoLimite;
+    alter table Custo drop column qt_Equipamento;
+
+3. EXEC sp_rename 'Custo.vl_Custo', 'vl_Equipamento', 'COLUMN';
+
+4. delete from Custo where cd_Fornecedor > 5 and vl_Custo > 150;
+
+5. update Custo set vl_Custo = vl_Custo + (vl_Custo*(13.80/100)) where cd_Fornecedor in (001, 005, 008) and vl_Custo > 120;
+   update Custo set vl_Custo = vl_Custo + (vl_Custo*(15.20/100)) where cd_Fornecedor in (001, 005, 008) and vl_Custo <= 120;
+
+6. select cd_Equipamento, count(cd_Fornecedor) from Custo group by cd_Equipamento ;
+
+7. SELECT cd_Fornecedor, AVG(vl_Custo) FROM Custo GROUP BY cd_Fornecedor ;
+
+8. select * from Equipamento where ds_Equipamento like '%Hard Disk%';
+
+9. alter table Custo add constraint CK_vlEquipamento CHECK (vl_Custo < 100);
+
+10. alter table Custo drop column cd_custo;
+    alter table Custo drop constraint PK_Custo;
